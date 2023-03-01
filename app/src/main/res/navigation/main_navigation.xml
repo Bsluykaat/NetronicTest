@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/nav_users">
+
+    <fragment
+        android:id="@+id/nav_users"
+        android:name="com.kerumitbsl.netronictest.ui.users.UsersFragment"
+        android:label="@string/users_label"
+        tools:layout="@layout/fragment_users">
+
+        <action
+            android:id="@+id/into_user_info"
+            app:destination="@id/nav_user_info"
+            app:enterAnim="@anim/alpha_in"
+            app:exitAnim="@anim/alpha_out"
+            app:popEnterAnim="@anim/alpha_in"
+            app:popExitAnim="@anim/alpha_out"/>
+
+        <action
+            android:id="@+id/into_history"
+            app:destination="@id/nav_history"
+            app:enterAnim="@anim/alpha_in"
+            app:exitAnim="@anim/alpha_out"
+            app:popEnterAnim="@anim/alpha_in"
+            app:popExitAnim="@anim/alpha_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_user_info"
+        android:name="com.kerumitbsl.netronictest.ui.userInfo.UserInfoFragment"
+        android:label="@string/user_info_label"
+        tools:layout="@layout/fragment_user_info">
+
+        <argument
+            android:name="user"
+            app:argType="com.kerumitbsl.core.bean.models.user.UserModel"
+            app:nullable="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.kerumitbsl.netronictest.ui.history.HistoryFragment"
+        android:label="@string/history_label"
+        tools:layout="@layout/fragment_history"/>
+
+</navigation>
