@@ -23,4 +23,12 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="AppTheme.LightTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.LightTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppBarSearchView" parent="Widget.AppCompat.SearchView.ActionBar">
+        <item name="android:textSize">21sp</item>
+    </style>
 </resources>

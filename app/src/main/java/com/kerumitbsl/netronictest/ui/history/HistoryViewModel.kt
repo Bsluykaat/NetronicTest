@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 class HistoryViewModel : BaseViewModel() {
 
-    val historyUsersLiveData: SingleLiveEvent<TestTaskResponse<List<UserModel>>> get() = coreApi.getHistoryUsersLiveData()
+    val historyLiveData: SingleLiveEvent<TestTaskResponse<List<UserModel>>> get() = coreApi.getHistoryUsersLiveData()
 
     fun queryHistoryUsers() {
         viewModelScope.launch(Dispatchers.IO) {

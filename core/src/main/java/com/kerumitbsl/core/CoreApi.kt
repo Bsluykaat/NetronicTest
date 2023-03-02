@@ -12,9 +12,11 @@ class CoreApi : KoinComponent {
 
     private val userLoadingComponent: UserLoadingComponent by inject()
 
+
     fun loadUsersRequest(results: Int, page: Int) = userLoadingComponent.getUsersAction.loadUsersRequest(results, page)
     fun getLoadUsersLiveData(): SingleLiveEvent<TestTaskResponse<GetUsersResponse>> = userLoadingComponent.getUsersAction.usersLiveData
 
-    fun getHistoryUsers() = userLoadingComponent.getHistoryUsers.queryUsers()
-    fun getHistoryUsersLiveData(): SingleLiveEvent<TestTaskResponse<List<UserModel>>> = userLoadingComponent.getHistoryUsers.historyUsersLiveData
+    fun getHistoryUsers() = userLoadingComponent.operateHistoryUsers.queryUsers()
+    fun putUserIntoHistory(user: UserModel) = userLoadingComponent.operateHistoryUsers.putUser(user)
+    fun getHistoryUsersLiveData(): SingleLiveEvent<TestTaskResponse<List<UserModel>>> = userLoadingComponent.operateHistoryUsers.historyUsersLiveData
 }

@@ -14,18 +14,18 @@
         <action
             android:id="@+id/into_user_info"
             app:destination="@id/nav_user_info"
-            app:enterAnim="@anim/alpha_in"
-            app:exitAnim="@anim/alpha_out"
-            app:popEnterAnim="@anim/alpha_in"
-            app:popExitAnim="@anim/alpha_out"/>
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/enter_anim"
+            app:popExitAnim="@anim/exit_anim"/>
 
         <action
             android:id="@+id/into_history"
             app:destination="@id/nav_history"
-            app:enterAnim="@anim/alpha_in"
-            app:exitAnim="@anim/alpha_out"
-            app:popEnterAnim="@anim/alpha_in"
-            app:popExitAnim="@anim/alpha_out"/>
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/enter_anim"
+            app:popExitAnim="@anim/exit_anim"/>
     </fragment>
 
     <fragment
@@ -44,6 +44,15 @@
         android:id="@+id/nav_history"
         android:name="com.kerumitbsl.netronictest.ui.history.HistoryFragment"
         android:label="@string/history_label"
-        tools:layout="@layout/fragment_history"/>
+        tools:layout="@layout/fragment_history">
+
+        <action
+            android:id="@+id/from_history_into_user_info"
+            app:destination="@id/nav_user_info"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/enter_anim"
+            app:popExitAnim="@anim/exit_anim"/>
+    </fragment>
 
 </navigation>

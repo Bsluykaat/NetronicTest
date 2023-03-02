@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 class IdObject(
     val name: String,
-    val value: String,
+    val value: String?,
 ) : Parcelable {
     override fun equals(other: Any?): Boolean {
         val casted = other as IdObject
