@@ -6,6 +6,7 @@ import com.kerumitbsl.netronictest.install.KoinInstaller
 class NetronicTestApp: Application() {
 
     override fun onCreate() {
+        application = this
         KoinInstaller().install(this)
         super.onCreate()
     }

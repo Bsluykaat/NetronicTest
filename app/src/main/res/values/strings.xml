@@ -3,4 +3,13 @@
     <string name="users_label">Users</string>
     <string name="user_info_label">User info</string>
     <string name="history_label">History</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="load_users_button">Load users button</string>
+    <string name="initials_text"><b>Initials:</b> %s</string>
+    <string name="gender_text"><b>Gender:</b> %s</string>
+    <string name="email_text"><b>Email:</b> %s</string>
+    <string name="nationality_text"><b>Nationality:</b> %s</string>
+    <string name="date_of_birth_text"><b>Date of birth:</b> %s, <b>Age:</b> %s</string>
+    <string name="id_text"><b>ID:</b> %s, <b>Number:</b> %s</string>
+    <string name="history_button">History button</string>
 </resources>

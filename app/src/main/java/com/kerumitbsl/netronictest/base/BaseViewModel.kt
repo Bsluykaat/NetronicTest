@@ -9,5 +9,9 @@ import org.koin.core.inject
 
 open class BaseViewModel: AndroidViewModel(NetronicTestApp.application), KoinComponent {
 
-    val coreApi: CoreApi by inject()
+    protected val coreApi: CoreApi by inject()
+
+    protected var pageIndex = 1
+
+    fun refreshPagination() { pageIndex = 1 }
 }

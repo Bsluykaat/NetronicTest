@@ -1,6 +1,7 @@
 package com.kerumitbsl.netronictest.ui.users
 
 import androidx.lifecycle.viewModelScope
+import com.kerumitbsl.core.bean.models.user.UserModel
 import com.kerumitbsl.core.bean.response.GetUsersResponse
 import com.kerumitbsl.core.bean.response.TestTaskResponse
 import com.kerumitbsl.core.extensions.RESULTS_PER_PAGE
@@ -13,14 +14,18 @@ class UsersViewModel : BaseViewModel() {
 
     val usersLiveData: SingleLiveEvent<TestTaskResponse<GetUsersResponse>> get() = coreApi.getLoadUsersLiveData()
 
-    private var pageIndex = 1
-
-    fun refreshPagination() { pageIndex = 1 }
-
     fun loadUsersRequest() {
         viewModelScope.launch(Dispatchers.IO) {
             coreApi.loadUsersRequest(RESULTS_PER_PAGE, pageIndex)
             pageIndex++
+        }
+    }
+
+    fun saveUsersIntoHistory(list: List<UserModel>) {
+        viewModelScope.launch(Dispatchers.IO) {
+            list.forEach {
+                coreApi.putUserIntoHistory(it)
+            }
         }
     }
 }
